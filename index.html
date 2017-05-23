@@ -3,9 +3,9 @@
   <head>
     <title>Invie - tus mejores guitarras!!</title>
     <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Allerta' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.css"/>
-<!--    <link rel="stylesheet" media="(max-width: 800px)" href="css/media-query.css">-->
   </head>
   <body>
     <section id="portada" class="portada background"> <!-- portada -->
@@ -13,7 +13,8 @@
         <figure class="logotipo"> <!-- logotipo -->
           <img src="assets/invie.png" width="186" height="60" alt="Invie logotipo"/>
         </figure>
-        <nav class="menu"> <!-- menu -->
+        <span class="burguer-button icon-menu" id="burger-btn"></span><!--menuicon-->
+        <nav class="menu" id="menu"> <!-- menu -->
           <ul>
             <li>
               <a href="index.html">Home</a>
@@ -99,5 +100,29 @@
         </form>
       </div>
     </footer>
+    <script type="text/javascript">
+      //mediaQuery con JS
+      var consulta = window.matchMedia('(max-width: 500px)');
+      consulta.addListener(mediaQuery);
+      //Initial variables
+      var $burgerBtn = document.getElementById('burger-btn');
+      var $menu = document.getElementById('menu');
+      function toggleMenu(){
+        $menu.classList.toggle('active');
+        $burgerBtn.classList.toggle('icon-close');
+      };
+
+      //Functions
+      function mediaQuery(){
+        if (consulta.matches){
+          console.log("Se cumplio");
+          $burgerBtn.addEventListener('touchstart', toggleMenu);
+        }else{
+          console.log("No se cumplio");
+          $burgerBtn.removeEventListener('touchstart', toggleMenu);
+        }
+      }
+      mediaQuery();
+    </script>
   </body>
 </html>
