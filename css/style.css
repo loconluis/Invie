@@ -435,3 +435,23 @@ input:focus, textarea:focus {
   }
   /*FOOTER*/
 }
+/*.contenedor-iframe{
+     position:relative;
+     padding-top: 56.25%; /* = (height(px)x100)/width(px)
+}
+.iframe{
+     position:absolute;
+     top:0;
+     right:0;
+     bottom:0;
+     left:0;
+     height: 100%;
+     width: 100%;
+}*/
+@media screen and (-webkit-min-device-pixel-ratio:2){
+  .background {
+    background-color: #466173;
+    background-image: url('../assets/background2x.png');
+    background-size: cover;
+  }
+}

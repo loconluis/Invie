@@ -11,7 +11,7 @@
     <section id="portada" class="portada background"> <!-- portada -->
       <header id="header" class="header contenedor"> <!-- header -->
         <figure class="logotipo"> <!-- logotipo -->
-          <img src="assets/invie.png" width="186" height="60" alt="Invie logotipo"/>
+          <img src="assets/invie.png" srcset="assets/invie.png, assets/invie2x.png 2x" width="186" height="60" alt="Invie logotipo"/>
         </figure>
         <span class="burguer-button icon-menu" id="burger-btn"></span><!--menuicon-->
         <nav class="menu" id="menu"> <!-- menu -->
@@ -33,8 +33,11 @@
     </section>
     <section id="guitarras" class="guitarras contenedor"> <!-- guitarras -->
       <h2>Nuestra guitarras</h2><!-- titulo -->
+      <!--<div class="contenedor-iframe">
+        <iframe  src="https://www.youtube.com/embed/R1dW8M4EqYY" width="" height=""></iframe><!--Video
+      </div>-->
       <article class="guitarra"> <!-- guitarra 1 -->
-        <img class="derecha" src="assets/invie-acustica.png" alt="Guitarra Invie Acustica" width="350"/>
+        <img class="derecha" data-src="assets/invie-acustica.png | assets/invie-acustica2x.png" srcset="assets/invie-acustica.png 1x, assets/invie-acustica2x.png 2x" alt="Guitarra Invie Acustica" width="350"/>
         <div class="contenedor-guitarra-a">
           <h3 class="title-b">Invie Acustica</h3>
           <ol>
@@ -45,7 +48,7 @@
         </div>
       </article>
       <article class="guitarra b"> <!-- guitarra 2 -->
-        <img class="izquierda" src="assets/invie-classic.png" alt="Guitarra Invie Classic" width="350"/>
+        <img class="izquierda" data-src="assets/invie-classic.png | assets/invie-classic2x.png" srcset="assets/invie-classic.png 1x, assets/invie-classic2x.png 2x" alt="Guitarra Invie Classic" width="350"/>
         <div class="contenedor-guitarra-b">
           <h3 class="title-b">Invie Classic</h3>
           <ol>
@@ -59,7 +62,7 @@
     <footer class="footer">
       <div class="contenedor">
         <div class="contacto">
-          <img src="assets/invie-white.png" alt="logotipo blanco"/>
+          <img data-src="assets/invie-white.png | assets/invie-white.png" srcset="assets/invie-white.png 1x, assets/invie-white2x.png 2x" alt="logotipo blanco"/>
           <a href="tel:+573024456678"><strong>Telefono</strong> <span>3024456678</span></a>
           <a href="mailto:contacto@invie.com"><strong>E-mail</strong> <span>contacto@invie.com</span></a>
         </div>
@@ -100,6 +103,7 @@
         </form>
       </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js" charset="utf-8"></script>
     <script type="text/javascript">
       //mediaQuery con JS
       var consulta = window.matchMedia('(max-width: 500px)');
@@ -123,6 +127,12 @@
         }
       }
       mediaQuery();
+
+      //lazyloading
+      var bLazy = new Blazy({
+      // options
+      selector: "img"
+      });
     </script>
   </body>
 </html>
