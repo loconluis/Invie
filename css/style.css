@@ -286,12 +286,12 @@ input:focus, textarea:focus {
   display: inline-block;
   text-align: center;
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   left: 20px;
   top: 20px;
   z-index: 3;
+  display: none;
 }
-
 
 @media screen and (max-width: 800px){
   .titulo{
@@ -386,7 +386,7 @@ input:focus, textarea:focus {
 @media screen and (max-width: 500px){
   .menu{
     background: rgba(255, 60, 88, 0.7);
-    position: absolute;
+    position: fixed;
     left: -100%;
     top: 0;
     z-index: 2;
@@ -403,11 +403,20 @@ input:focus, textarea:focus {
   .menu ul{
     flex: 1;
   }
+  .burguer-button{
+    display: block;
+  }
   .portada .contenedor{
     position: static;
   }
   .portada{
     text-align: center;
+  }
+  .portada .button{
+    display: block;
+  }
+  .col2{
+    align-items: stretch;
   }
   .menu li{
     display: block;
